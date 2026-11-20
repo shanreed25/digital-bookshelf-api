@@ -20,11 +20,23 @@
 
 
 ## Book Schema and Model
-- [ ] In the `models/` directory, create a `Book.js` file.
-- [ ] Define a schema for a Book with the following fields and validation rules:
-    - [ ] `title`: A String, which is required.
-    - [ ] `author`: A String, which is required.
-    - [ ] `isbn`: A String, which must be unique.
-    - [ ] `publishedDate`: A Date.
-    - [ ] `inStock`: A Boolean, with a default value of true.
-- [ ] Compile this schema into a model named Book and export it.
+- [X] In the `models/` directory, create a `Book.js` file.
+- [X] Define a schema for a Book with the following fields and validation rules:
+    - [X] `title`: A String, which is required.
+    - [X] `author`: A String, which is required.
+    - [X] `isbn`: A String, which must be unique.
+    - [X] `publishedDate`: A Date.
+    - [X] `inStock`: A Boolean, with a default value of true.
+- [X] Compile this schema into a model named Book and export it.
+
+##  API Routes
+- [X] In the `routes/` directory, create a `bookRoutes.js` file.
+- [X] Use `express.Router()` to create a new router instance.
+- [ ] Implement the five core CRUD endpoints on this router:
+    - [X] **Create: POST `/`** - Creates a new book using the data in req.body.
+    - [X] **Read All: GET `/`** - Retrieves all books from the database.
+    - [X] **Read One: GET `/:id`** - Retrieves a single book by its _id.
+    - [X] **Update: PUT `/:id`** - Updates a book by its _id using the data in req.body.
+    - [ ] **Delete: DELETE `/:id`** - Deletes a book by its _id.
+- [ ] Use `async/await` and `try...catch` blocks in all routes to handle errors.
+- [X] Export the router.
