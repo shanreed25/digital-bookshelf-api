@@ -2,11 +2,14 @@ import 'dotenv/config';
 import express from 'express';
 import connectToDB from './db/connection.js';
 import Book from './models/Book.js';
+import bookRoutes from './routes/bookRoutes.js'
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+
+app.use('/api/books', bookRoutes)
 
 app.get('/', (req, res) => {
   res.json({ message: 'Digital Bookshelf API started' });
@@ -14,13 +17,13 @@ app.get('/', (req, res) => {
 
 await connectToDB();//connect to db
 
-const newBook = await Book.create({
-  title: 'Learning MongoDB',
-  author: 'Shannon Reed',
-  isbn: '1112223335557778'
-})
+// const newBook = await Book.create({
+//   title: 'Learning Express',
+//   author: 'James Cohen',
+//   isbn: '936485015623437483'
+// })
 
-console.log(newBook);
+// console.log(newBook);
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
