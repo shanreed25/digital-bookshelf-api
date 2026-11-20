@@ -69,4 +69,22 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deletedBook = await Book.findByIdAndDelete(id);
+
+    if (!deletedBook) {
+      return res.status(404).json({ error: "Book not found" });
+    }
+
+    res.json({ message: "Book deleted", deletedBook });
+  } catch (err) {
+    res
+      .status(500)
+      .json({ message: "Error deleting book", error: err.message });
+  }
+});
+
 export default router;

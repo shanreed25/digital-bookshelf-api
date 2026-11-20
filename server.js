@@ -18,9 +18,9 @@ app.get('/', (req, res) => {
 await connectToDB();//connect to db
 
 // const newBook = await Book.create({
-//   title: 'Learning Express',
-//   author: 'James Cohen',
-//   isbn: '936485015623437483'
+//   title: 'Learning HTML',
+//   author: 'Rita Miller',
+//   isbn: '9998887776661112'
 // })
 
 // console.log(newBook);
