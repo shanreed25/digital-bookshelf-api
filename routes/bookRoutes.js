@@ -8,7 +8,7 @@ router.post("/", async (req, res) => {
   try {
     const book = await Book.create(req.body);
 
-    res.json(book);
+    res.status(201).json(book);
   } catch (err) {
     console.error("Error:", err.message);
     res
