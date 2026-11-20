@@ -37,6 +37,15 @@
     - [X] **Read All: GET `/`** - Retrieves all books from the database.
     - [X] **Read One: GET `/:id`** - Retrieves a single book by its _id.
     - [X] **Update: PUT `/:id`** - Updates a book by its _id using the data in req.body.
-    - [ ] **Delete: DELETE `/:id`** - Deletes a book by its _id.
-- [ ] Use `async/await` and `try...catch` blocks in all routes to handle errors.
+    - [X] **Delete: DELETE `/:id`** - Deletes a book by its _id.
+- [X] Use `async/await` and `try...catch` blocks in all routes to handle errors.
 - [X] Export the router.
+
+
+## Reflection Questions
+
+#### Why is it beneficial to separate your routes, models, and database connection into different directories?
+> It is beneficial to separate your routes, models, and database connection into different directories, so the code is easier to work with and debug because each file has one job. Separation of concerns also makes the project easier to grow later. 
+
+#### What is the difference between PUT and PATCH HTTP methods, and which one does your PUT /:id endpoint more closely resemble?
+> `PUT` updates the entire item and any field that are not added are removed or reset to default. `PATCH` updates only the fields that are included in the request and does not change the rest of the fileds. My `PUT` endpoint resembles a `PATCH` request, because I am using `findByIdAndUpdate()` which changes only the fields sent in `req.body` and leaves other fields alone.
